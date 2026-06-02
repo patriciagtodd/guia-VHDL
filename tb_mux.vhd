@@ -1,0 +1,69 @@
+entity tb_mux is
+end tb_mux;
+
+architecture sim of tb_mux is
+
+    signal a    : bit := '0';
+    signal b    : bit := '0';
+    signal s    : bit := '0';
+
+    signal c    : bit;
+
+begin
+
+    uut : entity work.mux
+    port map(
+        a => a,
+        b => b,
+        s => s,
+        c => c
+    );
+
+    process
+    begin
+
+        a <= '0';
+        b <= '0'; 
+        s <= '0';
+        wait for 10 ns;
+
+        a <= '0'; 
+        b <= '0'; 
+        s <= '1';
+        wait for 10 ns;
+
+        a <= '0'; 
+        b <= '1';
+        s <= '0';
+        wait for 10 ns;
+
+        a <= '0';
+        b <= '1'; 
+        s <= '1';
+        wait for 10 ns;
+
+        a <= '1'; 
+        b <= '0'; 
+        s <= '0';
+        wait for 10 ns;
+
+        a <= '1'; 
+        b <= '0'; 
+        s <= '1';
+        wait for 10 ns;
+
+        a <= '1'; 
+        b <= '1'; 
+        s <= '0';
+        wait for 10 ns;
+
+        a <= '1'; 
+        b <= '1'; 
+        s <= '1';
+        wait for 10 ns;
+
+        wait;
+
+    end process;
+
+end sim;

@@ -1,0 +1,13 @@
+{C:/altera/guia VHDL/uno.vhd} {0 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/uno.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity tb
+-- Compiling architecture sim of tb
+** Error: (vcom-11) Could not find work.ejemplo.
+
+** Error: C:/altera/guia VHDL/uno.vhd(12): (vcom-1195) Cannot find expanded name "work.ejemplo".
+
+** Error: C:/altera/guia VHDL/uno.vhd(12): Unknown expanded name.
+** Error: C:/altera/guia VHDL/uno.vhd(36): VHDL Compiler exiting
+
+} {6.0 7.0 8.0 9.0 10.0 12.0} {}}

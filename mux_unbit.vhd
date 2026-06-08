@@ -3,13 +3,13 @@ entity mux is
         a : in bit;
         b : in bit;
         s : in bit;
-        c : out bit
+        y : out bit
     );
 end mux;
 
 architecture selec of mux is
 begin
 
-    c <= (a and (not s)) or (b and s);
+    y <= (a and (not s)) or (b and s);
 
 end selec;

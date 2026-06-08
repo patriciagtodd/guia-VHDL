@@ -1,0 +1,45 @@
+entity tb_BarrelShifter is
+end tb_BarrelShifter;
+
+architecture simulacion of tb_BarrelShifter is
+
+    component BarrelShifter
+        generic(N : integer := 8);
+        port(
+            a : in  bit_vector(0 to N-1);
+            s : in  bit_vector(0 to 2);
+            y : out bit_vector(0 to N-1)
+        );
+    end component;
+
+    signal a : bit_vector(0 to 7);
+    signal s : bit_vector(0 to 2);
+    signal y : bit_vector(0 to 7);
+
+begin
+
+    DUT : BarrelShifter
+        generic map(
+            N => 8
+        )
+        port map(
+            a => a,
+            s => s,
+            y => y
+        );
+
+    process
+    begin
+        a <= "10110011";
+        s <= "001";
+         wait for 10 ns;
+         
+        
+        a <= "10110011";
+        s <= "011"; wait for 10 ns;
+        wait for 10 ns;
+
+        wait;
+    end process;
+
+end simulacion;

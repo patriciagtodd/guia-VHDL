@@ -36,7 +36,7 @@ begin
     -- Mux 1: s(0) controla shift de 1
     Mx1 : muxNbit
         generic map(N)
-        port map(a => a, b => sh1, s => s(2), y => t1);
+        port map(a => a, b => sh1, s => s(0), y => t1);
 
     -- Mux 2: s(1) controla shift de 2
     Mx2 : muxNbit
@@ -46,6 +46,6 @@ begin
     -- Mux 3: s(2) controla shift de 4
     Mx3 : muxNbit
         generic map(N)
-        port map(a => t2, b => sh4, s => s(0), y => y);
+        port map(a => t2, b => sh4, s => s(2), y => y);
 
 end estructural;

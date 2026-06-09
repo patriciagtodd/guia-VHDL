@@ -28,18 +28,51 @@ begin
             y => y
         );
 
-    process
-    begin
-        a <= "10110011";
-        s <= "001";
-         wait for 10 ns;
-         
-        
-        a <= "10110011";
-        s <= "011"; wait for 10 ns;
-        wait for 10 ns;
+  process
+begin
+    -- shift de 1: s = "001"
+    a <= "10110011";
+    s <= "001";
+    wait for 5 ns;
+    -- esperado: "01100110"
 
-        wait;
-    end process;
+    -- shift de 2: s = "010"
+    a <= "10110011";
+    s <= "010";
+    wait for 5 ns;
+    -- esperado: "00101100" (incorrecto aun... ver abajo)
+
+    -- shift de 3: s = "011"
+    a <= "10110011";
+    s <= "011";
+    wait for 5 ns;
+    -- esperado: "10011000"
+
+    -- shift de 4: s = "100"
+    a <= "10110011";
+    s <= "100";
+    wait for 5 ns;
+    -- esperado: "00110000"
+    
+    -- shift de 5: s = "101"
+    a <= "10110011";
+    s <= "101";
+    wait for 5 ns;
+    -- esperado: "01100000"
+    
+     -- shift de 6: s = "110"
+    a <= "10110011";
+    s <= "110";
+    wait for 5 ns;
+    -- esperado: "11000000"
+    
+     -- shift de 7: s = "111"
+    a <= "10110011";
+    s <= "111";
+    wait for 5 ns;
+    -- esperado: "10000000"
+
+    wait;
+end process;
 
 end simulacion;

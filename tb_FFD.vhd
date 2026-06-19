@@ -1,0 +1,42 @@
+entity testbenchFFD is
+end testbenchFFD;
+
+architecture simul of testbenchFFD is
+
+    signal clk  : bit := '0';
+    signal clr : bit;
+    signal d   : bit;
+    signal q   : bit;
+
+    component ffd
+        port(
+            clr : in bit;
+            clk  : in bit;
+            d   : in bit;
+            q   : out bit
+        );
+    end component;
+
+begin
+
+    -- Instancia del FFD
+    UUT : ffd
+        port map(
+            clr => clr,
+            clk  => clk,
+            d   => d,
+            q   => q
+        );
+    -- Clock de per�odo 100 ns
+    clk <= not clk after 50 ns;
+
+    -- Reset
+    clr <= '1', '0' after 30 ns;
+
+    -- Est�mulos de D
+    d <= '0',
+     '1' after 120 ns,
+     '0' after 220 ns,
+     '1' after 320 ns;
+
+end simul;

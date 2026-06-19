@@ -1,0 +1,98 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\13.1
+Edetector_110
+Z0 w1781888605
+Z1 dC:\altera\TP2
+Z2 8C:/altera/TP2/detector.vhd
+Z3 FC:/altera/TP2/detector.vhd
+l0
+L1
+V<2l0Ta3;5hUi=AQQC1j7I1
+Z4 OV;C;10.1d;51
+32
+Z5 !s108 1781888617.812000
+Z6 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/altera/TP2/detector.vhd|
+Z7 !s107 C:/altera/TP2/detector.vhd|
+Z8 o-work work -2002 -explicit -O0
+Z9 tExplicit 1
+!s100 6J:<TVDJhU:SDPEQ]R`]Z1
+!i10b 1
+Aestructural
+DEx4 work 12 detector_110 0 22 <2l0Ta3;5hUi=AQQC1j7I1
+l19
+L9
+VCU_4mK6<fICKFUWhGL8=E1
+!s100 iBLZ4UczkFI=SdR^?1P<41
+R4
+32
+R5
+R6
+R7
+R8
+R9
+!i10b 1
+Effd
+Z10 w1781314988
+R1
+Z11 8C:/altera/TP2/FFD.vhd
+Z12 FC:/altera/TP2/FFD.vhd
+l0
+L1
+V1@e4gIglWeajK`Qab?[jD2
+R4
+32
+Z13 !s108 1781888613.196000
+Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/altera/TP2/FFD.vhd|
+Z15 !s107 C:/altera/TP2/FFD.vhd|
+R8
+R9
+!s100 8cO]F^5Bc`1c2jI[NSCzR2
+!i10b 1
+Abehavior
+DEx4 work 3 ffd 0 22 1@e4gIglWeajK`Qab?[jD2
+l10
+L9
+VVAjDRG_Ac>SI@PfU[:mJ^0
+R4
+32
+R13
+R14
+R15
+R8
+R9
+!s100 0iO8=0Dk`oIT<V2BzClDh0
+!i10b 1
+Etestbench
+Z16 w1781888506
+R1
+Z17 8C:/altera/TP2/tb_detector.vhd
+Z18 FC:/altera/TP2/tb_detector.vhd
+l0
+L1
+V1?l6hD<GmcXY24:W6BBZQ1
+!s100 VJ7G2C8]LCz;KO2FLWZ_X3
+R4
+32
+!i10b 1
+Z19 !s108 1781888637.563000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/altera/TP2/tb_detector.vhd|
+Z21 !s107 C:/altera/TP2/tb_detector.vhd|
+R8
+R9
+Asimul
+Z22 DEx4 work 9 testbench 0 22 1?l6hD<GmcXY24:W6BBZQ1
+l16
+L3
+Z23 VzKZdnF^@KaR5?Wi:^2YcD2
+Z24 !s100 5gNVF2`WaCe9DQ:XEH4Ij0
+R4
+32
+!i10b 1
+R19
+R20
+R21
+R8
+R9

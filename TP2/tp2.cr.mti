@@ -1,0 +1,19 @@
+C:/altera/TP2/tb_detector.vhd {1 {vcom -work work -2002 -explicit C:/altera/TP2/tb_detector.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity testbench
+-- Compiling architecture simul of testbench
+
+} {} {}} C:/altera/TP2/FFD.vhd {1 {vcom -work work -2002 -explicit C:/altera/TP2/FFD.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity ffd
+-- Compiling architecture behavior of ffd
+
+} {} {}} C:/altera/TP2/detector.vhd {1 {vcom -work work -2002 -explicit C:/altera/TP2/detector.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity detector_110
+-- Compiling architecture estructural of detector_110
+
+} {} {}}

@@ -15,7 +15,7 @@ begin
         a => a,
         b => b,
         s => s,
-        y => y
+        c => c
     );
 
     process

@@ -1,4 +1,4 @@
-entity adderN is                   # defino generico
+entity adderN is                   -- defino generico
     generic(N : integer := 4);
     port(
         A    : in  bit_vector(0 to N-1);

@@ -11,7 +11,7 @@ architecture sim of tb_sum_restN is
 
 begin
 
-    uut : entity work.adderN
+    uut : entity work.FHadderN
     generic map(
         N => 4
     )

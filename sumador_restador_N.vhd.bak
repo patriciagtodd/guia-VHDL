@@ -1,4 +1,4 @@
-entity FHadderN is
+entity adderN is
     generic(
         N : integer := 4
     );
@@ -9,9 +9,9 @@ entity FHadderN is
         S    : out bit_vector(0 to N-1);
         Cout : out bit
     );
-end FHadderN;
+end adderN;
 
-architecture estructural of FHadderN is
+architecture estructural of adderN is
 
     component fulladder
         port(

@@ -1,0 +1,52 @@
+-- 1. LIBRERIAS (Estándar de la industria)
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+-- 2. ENTIDAD DEL CONTADOR GENERICO
+entity contador_generico is 
+    generic (n : integer := 4); -- Por defecto 4 bits, pero es ajustable
+    port (
+        clk : in  bit;                          -- Reloj
+        rst : in  bit;                          -- Reset sincrónico
+        q   : out bit_vector(n-1 downto 0)      -- Salida de la cuenta
+    );
+end contador_generico;
+
+-- 3. ARQUITECTURA ESTRUCTURAL
+architecture estructural of contador_generico is 
+    -- Declaramos el componente del Flip-Flop D Sincrónico
+    component ffd_sync 
+        port (ck, srst, d : in bit; q : out bit);
+    end component;
+
+    -- SEÑALES INTERNAS
+    signal d_inputs : bit_vector(n-1 downto 0);
+    signal carry    : bit_vector(n downto 0); 
+    -- Señal auxiliar para poder leer la salida (Feedback)
+    signal q_aux    : bit_vector(n-1 downto 0); 
+
+begin
+    -- Conectamos la señal auxiliar a la salida física de la entidad
+    q <= q_aux;
+
+    -- Lógica del Acarreo inicial
+    carry(0) <= '1'; -- El bit 0 siempre tiene permiso para conmutar
+
+    -- GENERACIÓN ESTRUCTURAL DEL CONTADOR
+    gen_cont: for i in 0 to n-1 generate
+        -- Instanciamos el FFD usando mapeo nominal (más seguro)
+        ff_inst: ffd_sync port map (
+            ck   => clk, 
+            srst => rst, 
+            d    => d_inputs(i), 
+            q    => q_aux(i) -- Guardamos el estado en q_aux
+        );
+        
+        -- Lógica de próximo estado: d = q XOR carry_in [2]
+        d_inputs(i) <= q_aux(i) xor carry(i);
+        
+        -- Propagación del carry: carry_out = carry_in AND q [2]
+        carry(i+1) <= carry(i) and q_aux(i);
+    end generate;
+
+end estructural;

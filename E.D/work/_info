@@ -1,0 +1,270 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\13.0sp1
+Econ_gen
+Z0 w1781911715
+Z1 dC:\Users\ECyT\Desktop\E.D
+Z2 8C:/Users/ECyT/Desktop/E.D/cont_dec.vhd
+Z3 FC:/Users/ECyT/Desktop/E.D/cont_dec.vhd
+l0
+L1
+VlJzCROlK>HAJTh:ZVQlQn2
+!s100 QNze0eNGLn9kmBE02^^Ok3
+Z4 OV;C;10.1d;51
+32
+!i10b 1
+Z5 !s108 1781911794.161000
+Z6 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/ECyT/Desktop/E.D/cont_dec.vhd|
+Z7 !s107 C:/Users/ECyT/Desktop/E.D/cont_dec.vhd|
+Z8 o-work work -2002 -explicit -O0
+Z9 tExplicit 1
+Ade_decadas
+Z10 DEx4 work 7 con_gen 0 22 lJzCROlK>HAJTh:ZVQlQn2
+l25
+L10
+VOoFb`oFJeQMA`1Y0QfeTR1
+!s100 So7?:4_[LCj4Kc[0l9k<>2
+R4
+32
+!i10b 1
+R5
+R6
+R7
+R8
+R9
+Aestructural
+DEx4 work 7 con_gen 0 22 :^DSMS@N4U>O6aLQR]N1T3
+l21
+L10
+V4S[Yf]>Al_3PZ1di;jbUP0
+R4
+32
+R8
+R9
+FC:/Users/ECyT/Desktop/E.D/con_gen.vhd
+w1781909072
+8C:/Users/ECyT/Desktop/E.D/con_gen.vhd
+!s108 1781911121.316000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/ECyT/Desktop/E.D/con_gen.vhd|
+!s107 C:/Users/ECyT/Desktop/E.D/con_gen.vhd|
+!s100 2fTKU^zSg?SBA3c?k;VTc3
+!i10b 1
+Econ_gen_tb
+Z11 w1781909257
+R1
+Z12 8C:/Users/ECyT/Desktop/E.D/con_gen_tb.vhd
+Z13 FC:/Users/ECyT/Desktop/E.D/con_gen_tb.vhd
+l0
+L1
+Vc9E?=b8=_8L99^VeDz2?[0
+R4
+32
+Z14 !s108 1781909561.504000
+Z15 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/ECyT/Desktop/E.D/con_gen_tb.vhd|
+Z16 !s107 C:/Users/ECyT/Desktop/E.D/con_gen_tb.vhd|
+R8
+R9
+!s100 6:?[?nd13aUkfdS?CDYHT0
+!i10b 1
+Asim
+DEx4 work 10 con_gen_tb 0 22 c9E?=b8=_8L99^VeDz2?[0
+l24
+L4
+VgeLLD=iFY2eKPFI<_d`Z^0
+R4
+32
+R14
+R15
+R16
+R8
+R9
+!s100 6`eGYf;_f]Q;fK]nU`U<T0
+!i10b 1
+Econtador_generico
+Z17 w1781908417
+R1
+Z18 8C:/Users/ECyT/Desktop/E.D/ContadorGenerico_sync.vhd
+Z19 FC:/Users/ECyT/Desktop/E.D/ContadorGenerico_sync.vhd
+l0
+L1
+VNMfi4BAdPlB]OF2C_`[Af3
+R4
+32
+Z20 !s108 1781908428.400000
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/ECyT/Desktop/E.D/ContadorGenerico_sync.vhd|
+Z22 !s107 C:/Users/ECyT/Desktop/E.D/ContadorGenerico_sync.vhd|
+R8
+R9
+!s100 @<VCTEkb>=XJh6j<Obz520
+!i10b 1
+Aestructural
+DEx4 work 17 contador_generico 0 22 NMfi4BAdPlB]OF2C_`[Af3
+l26
+L10
+VaV3[9z63C79A_AnUCEUZ@3
+R4
+32
+R20
+R21
+R22
+R8
+R9
+!s100 DP8DP?dT]Ie5]A?6I;0_h1
+!i10b 1
+Econtador_generico_tb
+Z23 w1781648278
+R1
+Z24 8C:/Users/ECyT/Desktop/E.D/contador_generico_tb.vhd
+Z25 FC:/Users/ECyT/Desktop/E.D/contador_generico_tb.vhd
+l0
+L1
+VVPZR74D1mSj5d36Q33o2L3
+R4
+32
+Z26 !s108 1781648811.458000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/ECyT/Desktop/E.D/contador_generico_tb.vhd|
+Z28 !s107 C:/Users/ECyT/Desktop/E.D/contador_generico_tb.vhd|
+R8
+R9
+!s100 zC5O7HM>e:YDAY>Ng^BFi3
+!i10b 1
+Asim
+DEx4 work 20 contador_generico_tb 0 22 VPZR74D1mSj5d36Q33o2L3
+l24
+L4
+VCf8YngJ=d0BSje37N^h]91
+R4
+32
+R26
+R27
+R28
+R8
+R9
+!s100 C1;F4NjUcb3<LV[36<]:k1
+!i10b 1
+Effd_sync
+Z29 w1781909535
+R1
+Z30 8C:/Users/ECyT/Desktop/E.D/ffd_sync.vhd
+Z31 FC:/Users/ECyT/Desktop/E.D/ffd_sync.vhd
+l0
+L1
+V6b`SC2YWOS;B8n@P7L<8G3
+R4
+32
+Z32 !s108 1781911125.711000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/ECyT/Desktop/E.D/ffd_sync.vhd|
+Z34 !s107 C:/Users/ECyT/Desktop/E.D/ffd_sync.vhd|
+R8
+R9
+!s100 _Bnhm6X:TH:@87PWF@nGO2
+!i10b 1
+Abeh
+DEx4 work 8 ffd_sync 0 22 6b`SC2YWOS;B8n@P7L<8G3
+l11
+L10
+VLF0lQL2WR^@]OICell]h90
+R4
+32
+R32
+R33
+R34
+R8
+R9
+!s100 4lFah58zmHl36VD]G=nG90
+!i10b 1
+Etb_con_dec
+Z35 w1781911392
+R1
+Z36 8C:/Users/ECyT/Desktop/E.D/tb_con_dec.vhd
+Z37 FC:/Users/ECyT/Desktop/E.D/tb_con_dec.vhd
+l0
+L1
+VFdh?7>ZRbDYjdl[I`6S0O3
+R4
+32
+Z38 !s108 1781911403.479000
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/ECyT/Desktop/E.D/tb_con_dec.vhd|
+Z40 !s107 C:/Users/ECyT/Desktop/E.D/tb_con_dec.vhd|
+R8
+R9
+!s100 AFi=zHP`<^]n:1eQ0Vnab1
+!i10b 1
+Asim
+DEx4 work 10 tb_con_dec 0 22 Fdh?7>ZRbDYjdl[I`6S0O3
+l26
+L5
+V>^n>bg_=nBG19H_cog0[h0
+R4
+32
+R38
+R39
+R40
+R8
+R9
+!s100 J`G0C2[PV3PF1@ME1_YZ00
+!i10b 1
+Etb_con_gen
+Z41 w1781911310
+R1
+R36
+R37
+l0
+L1
+VG1aHhAe>ccg;>_AkK6YzW0
+R4
+32
+Z42 !s108 1781911329.587000
+R39
+R40
+R8
+R9
+!s100 VSbKmbJOB5CSX:O_4N[J:1
+!i10b 1
+Asim
+DEx4 work 10 tb_con_gen 0 22 G1aHhAe>ccg;>_AkK6YzW0
+l26
+L5
+VTL]=g9[n@Q@;JoOT;_nG61
+R4
+32
+R42
+R39
+R40
+R8
+R9
+!s100 200ET=SQI6hi:Z:aTKf^D1
+!i10b 1
+Etb_contador_generico
+Z43 w1781907164
+R1
+Z44 8C:/Users/ECyT/Desktop/E.D/tb_contador_sync.vhd
+Z45 FC:/Users/ECyT/Desktop/E.D/tb_contador_sync.vhd
+l0
+L1
+VGA9GiGHWMX^H[;LB<za:H2
+R4
+32
+Z46 !s108 1781908436.854000
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/ECyT/Desktop/E.D/tb_contador_sync.vhd|
+Z48 !s107 C:/Users/ECyT/Desktop/E.D/tb_contador_sync.vhd|
+R8
+R9
+!s100 EPaB66];LKRKa@N90Z;<B0
+!i10b 1
+Asim
+DEx4 work 20 tb_contador_generico 0 22 GA9GiGHWMX^H[;LB<za:H2
+l26
+L5
+VYFf38N4H3eNI[>VNb=P[<0
+R4
+32
+R46
+R47
+R48
+R8
+R9
+!s100 _ehbifVi@G6bFh=kjFLh33
+!i10b 1

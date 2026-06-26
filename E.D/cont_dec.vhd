@@ -1,13 +1,13 @@
-entity con_gen is 
+entity con_dec is 
     generic (n : integer := 4); -- Parámetro genérico para el ancho de bits
     port (
         clk : in  bit;                                     
         rst : in  bit;                                     
         q   : buffer bit_vector(n-1 downto 0) -- Volvió a "buffer" para poder leerlo internamente
     );
-end con_gen;
+end con_dec;
 
-architecture de_decadas of con_gen is -- Corregido: ahora apunta a con_gen
+architecture de_decadas of con_dec is -- Corregido: ahora apunta a con_gen
 
     component ffd_sync is
         port ( 

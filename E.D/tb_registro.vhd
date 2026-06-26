@@ -1,4 +1,4 @@
-Código VHDL: Testbench para el Registro Estructural
+
 entity testbench_reg is
 end testbench_reg;
 

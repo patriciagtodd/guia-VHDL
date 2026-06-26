@@ -5,7 +5,7 @@ entity tb_con_dec is
     architecture sim of tb_con_dec is
     
         -- 1. Declaración del componente bajo prueba (Contador de Décadas)
-        component con_gen is
+        component con_dec is
             generic (n : integer := 4);
             port (
                 clk : in  bit;
@@ -26,7 +26,7 @@ entity tb_con_dec is
     begin
     
         -- 4. Instanciación de la Unidad Bajo Prueba (UUT)
-        uut: con_gen
+        uut: con_dec
             generic map (
                 n => N_BITS
             )

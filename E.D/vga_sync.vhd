@@ -22,15 +22,16 @@ architecture estructural of vga_sync is
 begin
     -- 1. Contador Horizontal
     -- Se resetea con el reset global o cuando llega a 800
-    h_rst_internal <= rst_global or (q_h(9) and q_h(8) and q_h(5));
-    
+--    h_rst_internal <= rst_global or (q_h(9) and q_h(8) and q_h(5));
+    h_rst_internal <= rst_global or (q_h(9) and q_h(8) and not q_h(7) and not q_h(6) and not q_h(5) and q_h(4) and q_h(3) and q_h(2) and q_h(1) and q_h(0));
+
     h_cont: con_gen 
         generic map (n => 10)
         port map (clk => clk_25MHz, rst => h_rst_internal, q => q_h);
 
     -- 2. Contador Vertical
     -- Incrementa solo cuando termina una línea horizontal
-    end_of_line <= q_h(9) and q_h(8) and q_h(5); 
+    end_of_line <= (q_h(9) and q_h(8) and not q_h(7) and not q_h(6) and not q_h(5) and q_h(4) and q_h(3) and q_h(2) and q_h(1) and q_h(0)); 
     v_rst_internal <= rst_global or (q_v(9) and q_v(3) and q_v(2) and q_v(0));
 
     v_cont: con_gen 

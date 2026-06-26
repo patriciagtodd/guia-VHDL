@@ -19,11 +19,8 @@ begin
         
         d_t <= "1010"; wait for 25 ns; 
         
-
-       
         en_t <= '1'; wait for 20 ns; 
-      
-
+    
         srst_t <= '1'; wait for 20 ns;
 
         srst_t <= '0';

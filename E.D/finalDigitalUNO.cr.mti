@@ -1,0 +1,114 @@
+{C:/altera/guia VHDL/E.D/tb_registro.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/tb_registro.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity testbench_reg
+-- Compiling architecture sim of testbench_reg
+
+} {} {}} {C:/altera/guia VHDL/E.D/tb_con_gen.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/tb_con_gen.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity con_gen_tb
+-- Compiling architecture sim of con_gen_tb
+
+} {} {}} {C:/altera/guia VHDL/E.D/muxNbit.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/muxNbit.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity muxNbit
+-- Compiling architecture selec of muxNbit
+
+} {} {}} {C:/altera/guia VHDL/E.D/tb_rom_caracteres.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/tb_rom_caracteres.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity tb_rom_caracteres
+-- Compiling architecture simulacion of tb_rom_caracteres
+-- Loading entity rom_caracteres
+
+} {} {}} {C:/altera/guia VHDL/E.D/tb_con_dec.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/tb_con_dec.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity tb_con_dec
+-- Compiling architecture sim of tb_con_dec
+
+} {} {}} {C:/altera/guia VHDL/E.D/tb_pantalla_ascii.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/tb_pantalla_ascii.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity tb_pantalla_ascii
+-- Compiling architecture sim of tb_pantalla_ascii
+-- Loading entity selector_caracter
+-- Loading entity rom_caracteres
+
+} {} {}} {C:/altera/guia VHDL/E.D/rom_caracteres.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/rom_caracteres.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity rom_caracteres
+-- Compiling architecture estructural of rom_caracteres
+-- Loading entity muxNbit
+
+} {} {}} {C:/altera/guia VHDL/E.D/tb_contador_sync.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/tb_contador_sync.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity tb_contador_generico
+-- Compiling architecture sim of tb_contador_generico
+
+} {} {}} {C:/altera/guia VHDL/E.D/ffd_sync.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/ffd_sync.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity ffd_sync
+-- Compiling architecture beh of ffd_sync
+
+} {} {}} {C:/altera/guia VHDL/E.D/registro_estructural.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/registro_estructural.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity registro_estructural
+-- Compiling architecture estructural of registro_estructural
+
+} {} {}} {C:/altera/guia VHDL/E.D/Deco_posición.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/Deco_posición.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity decod_posicion
+-- Compiling architecture rtl of decod_posicion
+
+} {} {}} {C:/altera/guia VHDL/E.D/tb_vga_sync.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/tb_vga_sync.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity tb_vga_sync
+-- Compiling architecture sim of tb_vga_sync
+
+} {} {}} {C:/altera/guia VHDL/E.D/cont_dec.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/cont_dec.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity con_dec
+-- Compiling architecture de_decadas of con_dec
+
+} {} {}} {C:/altera/guia VHDL/E.D/con_gen.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/con_gen.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity con_gen
+-- Compiling architecture estructural of con_gen
+
+} {} {}} {C:/altera/guia VHDL/E.D/Selecor_caracter.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/Selecor_caracter.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity selector_caracter
+-- Compiling architecture estructural of selector_caracter
+-- Loading entity muxNbit
+
+} {} {}} {C:/altera/guia VHDL/E.D/vga_sync.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/vga_sync.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity vga_sync
+-- Compiling architecture estructural of vga_sync
+
+} {} {}} {C:/altera/guia VHDL/E.D/contador_generico_tb.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/contador_generico_tb.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity contador_generico_tb
+-- Compiling architecture sim of contador_generico_tb
+
+} {} {}} {C:/altera/guia VHDL/E.D/ContadorGenerico_sync.vhd} {1 {vcom -work work -2002 -explicit {C:/altera/guia VHDL/E.D/ContadorGenerico_sync.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Compiling entity contador_generico
+-- Compiling architecture estructural of contador_generico
+
+} {} {}}

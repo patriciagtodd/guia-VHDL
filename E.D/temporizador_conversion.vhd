@@ -3,52 +3,49 @@ entity temporizador_conversion is
     port (
         clk            : in  bit;
         rst            : in  bit;
-        ventana_activa : out bit;  -- '1' durante los 1000 ciclos de medicion
-        fin_ventana    : out bit   -- pulso de 1 ciclo: "listo, capturar y resetear"
+        ventana_activa : out bit;
+        fin_ventana    : out bit
     );
 end temporizador_conversion;
 
 architecture estructural of temporizador_conversion is
 
     signal q_espera         : bit_vector(N_ESPERA-1 downto 0);
+    signal acc              : bit_vector(N_ESPERA downto 0);  -- cadena de AND, igual que "carry"
     signal pulso_lento      : bit;
     signal ventana_activa_i : bit;
     signal d_va             : bit;
     signal q_cnt            : bit_vector(9 downto 0);
     signal fin_ventana_i    : bit;
+    signal reset_cnt        : bit;
 
 begin
 
-    -- Contador lento, corre siempre, se desborda cada 2**N_ESPERA ciclos
     U_ESPERA : entity work.con_gen
         generic map (n => N_ESPERA)
         port map (clk => clk, rst => rst, q => q_espera);
 
-    -- "Todos unos" = valor maximo -> AND de todos los bits (sin ningun NOT)
-    process(q_espera)
-        variable acc : bit;
-    begin
-        acc := '1';
-        for i in 0 to N_ESPERA-1 loop
-            acc := acc and q_espera(i);
-        end loop;
-        pulso_lento <= acc;
-    end process;
+    -- Cadena estructural de AND: detecta "todos los bits en 1" (el valor
+    -- maximo del contador), igual mecanismo que el "carry" de con_gen/con_dec
+    acc(0) <= '1';
+    gen_and: for i in 0 to N_ESPERA-1 generate
+        acc(i+1) <= acc(i) and q_espera(i);
+    end generate;
 
-    -- "Cerrojo" que se prende con pulso_lento y se apaga con fin_ventana
-    -- (misma idea que un biestable SR armado con un FFD)
+    pulso_lento <= acc(N_ESPERA);
+
     d_va <= pulso_lento or (ventana_activa_i and not fin_ventana_i);
 
     U_VA : entity work.ffd_sync
         port map (ck => clk, srst => rst, d => d_va, q => ventana_activa_i);
 
-    -- Contador de 1000 ciclos, solo avanza mientras ventana_activa_i = '1'
+    reset_cnt <= rst or fin_ventana_i;
+
     U_CNT : entity work.contador_habilitado
         generic map (n => 10)
-        port map (clk => clk, rst => (rst or fin_ventana_i),
+        port map (clk => clk, rst => reset_cnt,
                    habilita => ventana_activa_i, q => q_cnt);
 
-    -- Detecta 999 = "1111100111" (mismo truco que end_of_line en vga_sync)
     fin_ventana_i <= ventana_activa_i
                   and q_cnt(9) and q_cnt(8) and q_cnt(7) and q_cnt(6) and q_cnt(5)
                   and (not q_cnt(4)) and (not q_cnt(3))

@@ -1,20 +1,22 @@
 entity medidor_voltaje is
+    generic (N_ESPERA : integer := 22);  -- 22 en la placa real, chico para simular
     port (
         clk, rst : in bit;
 
-        -- Entradas de los 3 comparadores FFD (D = nodo del RC externo de cada medicion)
         d_comparador_m1 : in bit;
         d_comparador_m2 : in bit;
         d_comparador_m3 : in bit;
 
-        -- Realimentacion hacia el RC externo (va a un pin de la FPGA por canal)
         q_comparador_m1 : out bit;
         q_comparador_m2 : out bit;
         q_comparador_m3 : out bit;
 
         unidad_m1, decima_m1, centesima_m1 : out bit_vector(3 downto 0);
         unidad_m2, decima_m2, centesima_m2 : out bit_vector(3 downto 0);
-        unidad_m3, decima_m3, centesima_m3 : out bit_vector(3 downto 0)
+        unidad_m3, decima_m3, centesima_m3 : out bit_vector(3 downto 0);
+
+        ventana_activa_dbg : out bit;
+        fin_ventana_dbg     : out bit
     );
 end medidor_voltaje;
 
@@ -24,10 +26,9 @@ architecture estructural of medidor_voltaje is
 begin
 
     U_TIEMPO : entity work.temporizador_conversion
-        generic map (N_ESPERA => 22)
+        generic map (N_ESPERA => N_ESPERA)
         port map (clk => clk, rst => rst, ventana_activa => ventana_activa, fin_ventana => fin_ventana);
 
-    -- Comparadores de 1 bit (FFD): muestrean el nodo RC a 25MHz
     U_COMP1 : entity work.ffd_sync port map (ck => clk, srst => '0', d => d_comparador_m1, q => q1);
     U_COMP2 : entity work.ffd_sync port map (ck => clk, srst => '0', d => d_comparador_m2, q => q2);
     U_COMP3 : entity work.ffd_sync port map (ck => clk, srst => '0', d => d_comparador_m3, q => q3);
@@ -50,5 +51,8 @@ begin
         port map (clk => clk, rst => rst, q_bitstream => q3,
                    ventana_activa => ventana_activa, fin_ventana => fin_ventana,
                    unidad => unidad_m3, decima => decima_m3, centesima => centesima_m3);
+
+    ventana_activa_dbg <= ventana_activa;
+    fin_ventana_dbg     <= fin_ventana;
 
 end estructural;

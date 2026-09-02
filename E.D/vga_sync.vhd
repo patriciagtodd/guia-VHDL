@@ -16,37 +16,35 @@ architecture estructural of vga_sync is
         port (clk, rst : in bit; q : out bit_vector(n-1 downto 0));
     end component;
 
+    component contador_habilitado
+        generic (n : integer := 4);
+        port (clk, rst, habilita : in bit; q : buffer bit_vector(n-1 downto 0));
+    end component;
+
     signal q_h, q_v : bit_vector(9 downto 0);
     signal h_rst_internal, v_rst_internal : bit;
     signal end_of_line : bit;
 begin
     -- 1. Contador Horizontal
-    -- Se resetea con el reset global o cuando llega a 800
---    h_rst_internal <= rst_global or (q_h(9) and q_h(8) and q_h(5));
     h_rst_internal <= rst_global or (q_h(9) and q_h(8) and not q_h(7) and not q_h(6) and not q_h(5) and q_h(4) and q_h(3) and q_h(2) and q_h(1) and q_h(0));
 
-    h_cont: con_gen 
+    h_cont: con_gen
         generic map (n => 10)
         port map (clk => clk_25MHz, rst => h_rst_internal, q => q_h);
 
     -- 2. Contador Vertical
-    -- Incrementa solo cuando termina una línea horizontal
-    end_of_line <= (q_h(9) and q_h(8) and not q_h(7) and not q_h(6) and not q_h(5) and q_h(4) and q_h(3) and q_h(2) and q_h(1) and q_h(0)); 
+    -- Mismo reloj que el horizontal; end_of_line habilita el avance en vez de clockear
+    end_of_line <= (q_h(9) and q_h(8) and not q_h(7) and not q_h(6) and not q_h(5) and q_h(4) and q_h(3) and q_h(2) and q_h(1) and q_h(0));
     v_rst_internal <= rst_global or (q_v(9) and q_v(3) and q_v(2) and q_v(0));
 
-    v_cont: con_gen 
+    v_cont: contador_habilitado
         generic map (n => 10)
-        port map (clk => end_of_line, rst => v_rst_internal, q => q_v);
+        port map (clk => clk_25MHz, rst => v_rst_internal, habilita => end_of_line, q => q_v);
 
-    -- 3. Lógica de Salida Sincronismo (Simplificada para ejemplo)
-    -- h_sync debe ser '0' en el rango 656-751.
-    -- Implementar mediante decodificadores de puertas según el valor de q_h.
-    
-    -- Señal de Video ON (Solo cuando ambos están en área visible)
-    -- Visible si q_h < 640 (bit 9 o 8 son 0) y q_v < 480
-    video_on <= not ( q_h(9) and (q_h(8) or q_h(7)) ) -- H < 640
-            and 
-            not ( q_v(9) or (q_v(8) and q_v(7) and q_v(6) and q_v(5)) ); -- V < 480
+    -- 3. Señal de Video ON
+    video_on <= not ( q_h(9) and (q_h(8) or q_h(7)) )
+            and
+            not ( q_v(9) or (q_v(8) and q_v(7) and q_v(6) and q_v(5)) );
 
     pixel_x <= q_h;
     pixel_y <= q_v;

@@ -74,6 +74,19 @@ begin
     begin
         wait until rst = '0';
 
+        -- Columna 0 de Medicion 1: se toma aca porque px ya vale
+        -- 1 en la primera vuelta del loop (py sigue en 0 desde el
+        -- reset, nunca "cambia", asi que el loop no lo detectaria).
+        report "----- Medicion 1 -----";
+        if video_pixel = '1' then
+            linea(1) := '#';
+        else
+            linea(1) := '.';
+        end if;
+        contador    := 1;
+        capturando  := true;
+        py_anterior := py;
+
         loop
             wait until clk = '1' and clk'event;
             wait for 1 ns;
@@ -82,9 +95,7 @@ begin
                 if (py(2 downto 0) = "000") and (py < "0011000000") then
                     capturando := true;
                     contador := 0;
-                    if py = "0000000000" then
-                        report "----- Medicion 1 -----";
-                    elsif py = "0001000000" then
+                    if py = "0001000000" then
                         report "----- Medicion 2 -----";
                     elsif py = "0010000000" then
                         report "----- Medicion 3 -----";

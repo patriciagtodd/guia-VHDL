@@ -6,7 +6,7 @@ entity Voltimetro_toplevel is
         data_volt_in_1_i  : in  bit;   -- pin 89
         data_volt_out_1_o : out bit;   -- pin 87
         data_volt_in_2_i  : in  bit;   -- pin 90
-        data_volt_out_2_o : out bit;   -- pin 88
+        data_volt_out_2_o : out bit;   -- pin 94
         data_volt_in_3_i  : in  bit;   -- pin 81
         data_volt_out_3_o : out bit;   -- pin 80
 
@@ -37,33 +37,48 @@ architecture estructural of Voltimetro_toplevel is
     end component;
 
     signal clk25MHz, clk25MHz_n : bit;
-    signal video_pixel_i : bit;
-    signal px_dbg, py_dbg : bit_vector(9 downto 0);
+signal video_pixel_i : bit;
+signal px_dbg, py_dbg : bit_vector(9 downto 0);
+signal rst_global_i : bit;
 
 begin
 
-    clk25MHz_n <= not clk25MHz;
+clk25MHz_n <= not clk25MHz;
 
-    gen_clk25 : ffd_sync
-        port map (ck => clk_i, srst => '0', d => clk25MHz_n, q => clk25MHz);
+rst_global_i <= not rst_i;
 
-    U_TOP : top_medidor_display
-        generic map (N_ESPERA => 22)
-        port map (
-            clk_25MHz  => clk25MHz,
-            rst_global => rst_i,
-            d_comparador_m1 => data_volt_in_1_i,
-            d_comparador_m2 => data_volt_in_2_i,
-            d_comparador_m3 => data_volt_in_3_i,
-            q_comparador_m1 => data_volt_out_1_o,
-            q_comparador_m2 => data_volt_out_2_o,
-            q_comparador_m3 => data_volt_out_3_o,
-            h_sync => hs_o, v_sync => vs_o, video_pixel => video_pixel_i,
-            pixel_x_dbg => px_dbg, pixel_y_dbg => py_dbg
-        );
+gen_clk25 : ffd_sync
+    port map (
+        ck   => clk_i,
+        srst => '0',
+        d    => clk25MHz_n,
+        q    => clk25MHz
+    );
 
-    red_o <= video_pixel_i;
-    grn_o <= video_pixel_i;
-    blu_o <= video_pixel_i;
+U_TOP : top_medidor_display
+    generic map (N_ESPERA => 22)
+    port map (
+        clk_25MHz  => clk25MHz,
+        rst_global => rst_global_i,
+
+        d_comparador_m1 => data_volt_in_1_i,
+        d_comparador_m2 => data_volt_in_2_i,
+        d_comparador_m3 => data_volt_in_3_i,
+
+        q_comparador_m1 => data_volt_out_1_o,
+        q_comparador_m2 => data_volt_out_2_o,
+        q_comparador_m3 => data_volt_out_3_o,
+
+        h_sync => hs_o,
+        v_sync => vs_o,
+        video_pixel => video_pixel_i,
+
+        pixel_x_dbg => px_dbg,
+        pixel_y_dbg => py_dbg
+    );
+
+red_o <= video_pixel_i;
+grn_o <= video_pixel_i;
+blu_o <= video_pixel_i;
 
 end estructural;

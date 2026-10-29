@@ -47,9 +47,8 @@ begin
                    habilita => ventana_activa_i, q => q_cnt);
 
     fin_ventana_i <= ventana_activa_i
-                  and q_cnt(9) and q_cnt(8) and q_cnt(7) and q_cnt(6) and q_cnt(5)
-                  and (not q_cnt(4)) and (not q_cnt(3))
-                  and q_cnt(2) and q_cnt(1) and q_cnt(0);
+              and q_cnt(15) and q_cnt(7) and q_cnt(6) and q_cnt(5) and q_cnt(3); 
+              -- PARA 5  BCD
 
     ventana_activa <= ventana_activa_i;
     fin_ventana    <= fin_ventana_i;

@@ -33,10 +33,17 @@ begin
         port map (clk => clk, rst => reset_conteo, habilita => carry_d,
                    q => d_unidad, carry_out => open);
 
+ ---- puedo poner 5 bcd que cuente hasta 33000 pero solo quedarme con los primeros 3, solo para eliminar el ruido 
+
+
     U_REG_C : entity work.registro_estructural generic map (n => 4)
         port map (clk => clk, rst => rst, ena => fin_ventana, d => d_centesima, q => centesima);
     U_REG_D : entity work.registro_estructural generic map (n => 4)
         port map (clk => clk, rst => rst, ena => fin_ventana, d => d_decima, q => decima);
     U_REG_U : entity work.registro_estructural generic map (n => 4)
+        port map (clk => clk, rst => rst, ena => fin_ventana, d => d_unidad, q => unidad);
+    U_REG_estable1 : entity work.registro_estructural generic map (n => 4)
+        port map (clk => clk, rst => rst, ena => fin_ventana, d => d_unidad, q => unidad);
+    U_REG_estable2 : entity work.registro_estructural generic map (n => 4)
         port map (clk => clk, rst => rst, ena => fin_ventana, d => d_unidad, q => unidad);
 end estructural;

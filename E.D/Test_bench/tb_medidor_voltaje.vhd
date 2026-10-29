@@ -3,7 +3,7 @@ end tb_medidor_voltaje;
 
 architecture sim of tb_medidor_voltaje is
 
-    constant N_ESPERA_TB : integer := 4;
+    constant N_ESPERA_TB : integer := 16;
 
     signal clk : bit := '0';
     signal rst : bit := '1';
